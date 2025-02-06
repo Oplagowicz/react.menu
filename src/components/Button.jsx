@@ -1,10 +1,9 @@
 import React from "react";
 
 
-function button() {
-    return <div>
-        <button>Yes</button>
-    </div>
+function Button(props) {
+    return <button className="nav_text">{props.type}</button>
+    
 };
 
-export default button
+export default Button
