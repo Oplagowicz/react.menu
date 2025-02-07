@@ -11,13 +11,13 @@ const getDishImage = (title) => {
 };
 
 // Function for dynamically loading ingredient icons
-const getIngredientIcons = (ingredients) => {
-  return ingredients.split(", ").map((ingredients) => {
+const getIngredientIcons = (ingredientsList) => {
+  return ingredientsList.split(", ").map((ingredients) => {
     try {
       const icon = require(`../img/ingredients/${ingredients}.svg`);
-      return { name: ingredients, icon };
+      return { name: ingredients, icon:icon };
     } catch (error) {
-      console.warn(`Icon not found for: ${ingredients}`);
+      console.error(`Icon not found for: ${ingredients}, error: ${error}`);
       return { name: ingredients, icon: require("../img/ingredients/default.png") }; // Fallback image
     }
   });
@@ -59,3 +59,5 @@ function Dish({ title, content, ingredients }) {
 }
 
 export default Dish;
+
+
