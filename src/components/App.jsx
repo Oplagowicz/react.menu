@@ -40,7 +40,7 @@ const activeDishRef = useRef(null);
     <div>
       <div className="nav">
         <Button type="Meat" onClick={() => setMenuType("meat")} />
-        <Button type="Vegetarian" onClick={() => setMenuType("veggie")} />
+        <Button type="Veggie" onClick={() => setMenuType("veggie")} />
       </div>
       <div className="menu">
       {(filteredDishes.map((dish) => (
