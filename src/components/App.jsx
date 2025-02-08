@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import Dish from "./Dish";
-import dishes from "./notes_dishes";
+import dishes from "../constants/notes_dishes";
 
 function App() {
   return (

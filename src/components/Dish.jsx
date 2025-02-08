@@ -1,27 +1,7 @@
 import React, { useState } from "react";
+import getIngredientIcons from "../utilities/Ingredient_Icons";
+import getDishImage from "../utilities/Dish_Image";
 
-// Function for dynamically loading dish images
-const getDishImage = (title) => {
-  try {
-    return require(`../img/dishes/${title}.png`);
-  } catch (error) {
-    console.warn(`Image not found for: ${title}`);
-    return require("../img/dishes/default.png"); // Fallback image
-  }
-};
-
-// Function for dynamically loading ingredient icons
-const getIngredientIcons = (ingredientsList) => {
-  return ingredientsList.split(", ").map((ingredients) => {
-    try {
-      const icon = require(`../img/ingredients/${ingredients}.svg`);
-      return { name: ingredients, icon:icon };
-    } catch (error) {
-      console.error(`Icon not found for: ${ingredients}, error: ${error}`);
-      return { name: ingredients, icon: require("../img/ingredients/default.png") }; // Fallback image
-    }
-  });
-};
 
 function Dish({ title, content, ingredients }) {
   const [showDetails, setShowDetails] = useState(false);
