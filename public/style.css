@@ -64,9 +64,19 @@ button:active {
   margin: 20px;
 }
 
+.menu_list.active {
+  background-color: rgba(255, 215, 0, 0.2);
+  border: 2px solid gold;
+  scroll-margin-top: 10px;
+}
+
+.menu_list:focus {
+  outline: 2px solid gold;
+}
+
 .dish_img {
-  width: 250px;
-  height: 250px;
+  width: 60vh;
+  height: auto;
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }

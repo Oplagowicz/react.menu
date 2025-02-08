@@ -1,5 +1,3 @@
-import React from "react";
-
 // Function for dynamically loading dish images
 const getDishImage = (title) => {
   try {

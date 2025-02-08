@@ -1,5 +1,3 @@
-import React from "react";
-
 // Function for dynamically loading ingredient icons
 const getIngredientIcons = (ingredientsList) => {
   return ingredientsList.split(", ").map((ingredients) => {

@@ -1,9 +1,12 @@
 import React from "react";
 
 
-function Button(props) {
-    return <button className="nav_text">{props.type}</button>
-    
-};
+function Button({ type, onClick }) {
+  return (
+    <button className={"nav_text"} onClick={onClick}>
+      {type}
+    </button>
+  );
+}
 
 export default Button

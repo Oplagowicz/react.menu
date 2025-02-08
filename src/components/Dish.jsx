@@ -1,26 +1,22 @@
-import React, { useState } from "react";
+import React, { forwardRef } from "react";
 import getIngredientIcons from "../utilities/Ingredient_Icons";
 import getDishImage from "../utilities/Dish_Image";
 
 
-function Dish({ title, content, ingredients }) {
-  const [showDetails, setShowDetails] = useState(false);
-
-  // Loading dish image
+const Dish = forwardRef(({ title, content, ingredients, isActive, onClick }, ref) => {
   const dishImage = getDishImage(title);
-
-  // Loading ingredient icons
   const ingredientIcons = getIngredientIcons(ingredients);
 
-  const handleClick = () => {
-    setShowDetails(!showDetails);
-  };
-
   return (
-    <div className="menu_list" onClick={handleClick}>
-      <img className={`dish_img ${showDetails ? "transparent" : ""}`} src={dishImage} alt={title} />
-      
-      {showDetails && (
+    <div 
+      ref={ref} 
+      className={`menu_list ${isActive ? "active" : ""}`} 
+      onClick={onClick} 
+      tabIndex={0}
+    >
+      <img className={`dish_img ${isActive ? "transparent" : ""}`} src={dishImage} alt={title} />
+
+      {isActive && (
         <div className="dish_details">
           <h2>{title}</h2>
           <p>{content}</p>
@@ -36,7 +32,7 @@ function Dish({ title, content, ingredients }) {
       )}
     </div>
   );
-}
+});
 
 export default Dish;
 
