@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import Button from "./Button";
-import Dish from "./Dish";
-import dishes from "../constants/notes_dishes";
+import Button from "./components/Button";
+import Dish from "./components/Dish";
+import dishes from "./constants/notes_dishes";
 
 function App() {
   const [menuType, setMenuType] = useState(() => {
